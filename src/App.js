@@ -8,11 +8,12 @@ import ExpenseList from './components/ExpenseList';
 import AllocationForm from './components/AllocationForm';
 import RemainingBudget from './components/Remaining';
 import CurrencySelector from './components/CurrencySelector';
-//import { CurrencyProvider } from './components/CurrencyManager';
+import CurrencyProvider  from './components/CurrencyProvider';
 
 const App = () => {
     return (
         <AppProvider>
+            <CurrencyProvider>
             <div className='container'>
                 <h1 className='mt-3'>Company's Budget Allocation</h1>
                     <div className='row mt-3'>                        <div className='col-sm'>
@@ -36,12 +37,12 @@ const App = () => {
                     <div className='col-sm'>
                         <AllocationForm/>
                     </div>
-                    <div className = 'col-sm'>
+                    <div className = 'selector'>
                         <CurrencySelector/>
                     </div>
                 </div>
             </div>
-
+        </CurrencyProvider>
         </AppProvider>
     );
 };

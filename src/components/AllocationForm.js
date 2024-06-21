@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
+import { useCurrency } from './CurrencyProvider';
 
 const AllocationForm = (props) => {
     const { dispatch,remaining, budget  } = useContext(AppContext);
@@ -7,6 +8,7 @@ const AllocationForm = (props) => {
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
+    const { currency } = useCurrency();
 
     const submitEvent = () => {
 
@@ -64,7 +66,8 @@ const AllocationForm = (props) => {
                         <option defaultValue value="Add" name="Add">Add</option>
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
-
+                  <div>{currency}</div>
+                  
                     <input
                         required='required'
                         type='number'

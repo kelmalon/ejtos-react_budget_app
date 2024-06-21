@@ -3,14 +3,12 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { CurrencyProvider } from './components/CurrencyManager';
+//import { CurrencyProvider } from './components/CurrencyProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CurrencyProvider>
         <App />
-    </CurrencyProvider>
   </React.StrictMode>
 );
 

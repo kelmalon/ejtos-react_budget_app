@@ -1,21 +1,21 @@
 import React from 'react';
-import { useCurrency } from "./CurrencyManager";
+import { useCurrency } from './CurrencyProvider'; // Adjust import path as per your project structure
 
 const CurrencySelector = () => {
-    const selectedCurrency = useCurrency(); // Default currency
-    const setSelectedCurrency = useCurrency();
+    const { currency, setCurrency } = useCurrency();
+
     const handleCurrencyChange = (event) => {
-        setSelectedCurrency(event.target.value);
+        setCurrency(event.target.value);
     };
+
     return (
         <div>
             <label htmlFor="currency">Choose a currency:</label>
-
-            <select id="currency" value={selectedCurrency} onChange={handleCurrencyChange}>
+            <select id="currency" value={currency} onChange={handleCurrencyChange}>
                 <option value="$">$ Dollar</option>
                 <option value="£">£ Pound</option>
                 <option value="€">€ Euro</option>
-                <option value="₹">₹ Ruppee</option>
+                <option value="₹">₹ Rupee</option>
             </select>
         </div>
     );

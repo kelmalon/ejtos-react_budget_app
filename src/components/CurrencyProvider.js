@@ -1,12 +1,10 @@
-// CurrencyContext.js
 import React, { createContext, useContext, useState } from 'react';
 
-// Create the context
 const CurrencyContext = createContext();
 
-// Create a provider component
 export const CurrencyProvider = ({ children }) => {
-    const [currency, setCurrency] = useState('$');
+    const [currency, setCurrency] = useState('$'); // Default currency is Dollar
+
     return (
         <CurrencyContext.Provider value={{ currency, setCurrency }}>
             {children}
@@ -14,7 +12,12 @@ export const CurrencyProvider = ({ children }) => {
     );
 };
 
-// Custom hook to use the currency context
 export const useCurrency = () => {
-    return useContext(CurrencyContext);
+    const context = useContext(CurrencyContext);
+    if (!context) {
+        throw new Error('useCurrency must be used within a CurrencyProvider');
+    }
+    return context;
 };
+
+export default CurrencyProvider;
