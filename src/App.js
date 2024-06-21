@@ -25,6 +25,9 @@ const App = () => {
                     <div className='col-sm'>
                         <ExpenseTotal />
                     </div>
+                    <div className = 'selector'>
+                        <CurrencySelector/>
+                    </div>
                 </div>
                 <h3 className='mt-3'>Allocation</h3>
                 <div className='row '>
@@ -36,9 +39,6 @@ const App = () => {
                 <div className='row mt-3'>
                     <div className='col-sm'>
                         <AllocationForm/>
-                    </div>
-                    <div className = 'selector'>
-                        <CurrencySelector/>
                     </div>
                 </div>
             </div>

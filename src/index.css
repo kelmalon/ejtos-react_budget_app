@@ -11,3 +11,29 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.increase {
+    background-color: #8db63a;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    height: 20pt;
+    width: 20pt;
+    font-weight: 900;
+    font-size: x-large;
+    line-height: 20pt;
+    padding: 0px;
+}
+
+.decrease {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    height: 20pt;
+    width: 20pt;
+    font-weight: 900;
+    font-size:xx-large;
+    line-height: 20pt;
+    padding: 0px;
+}
